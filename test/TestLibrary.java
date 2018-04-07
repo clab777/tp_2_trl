@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestTrl {
+public class TestLibrary {
 
 	private static final String TITLE = "Object Oriented Software Engineering Practical Software Development using UML and Java";
 	private static int NB_BOOKS = 2;
@@ -30,28 +30,28 @@ public class TestTrl {
 		//---------------------------------------
 		// Display Books, Students and Teachers 
 		//---------------------------------------
-		System.out.println("---------------------------");
-		System.out.println("---- Library TextBooks ----");
-		System.out.println("---------------------------");
+		StdOut.println("---------------------------");
+		StdOut.println("---- Library Catalog ------");
+		StdOut.println("---------------------------");
 
 		library.displayBooks();
 		
-		System.out.println("---------------------------");
-		System.out.println("---- Students ----");
-		System.out.println("---------------------------");
+		StdOut.println("---------------------------");
+		StdOut.println("---- Students ----");
+		StdOut.println("---------------------------");
 
 		library.displayStudents();
 
-		System.out.println("---------------------------");
-		System.out.println("---- Teachers ----");
-		System.out.println("---------------------------");
+		StdOut.println("---------------------------");
+		StdOut.println("---- Teachers ----");
+		StdOut.println("---------------------------");
 
 		library.displayTeachers();
 
-		System.out.println("");
-		System.out.println("*******************************************");
-		System.out.println("Welcome to Library Management System (LMS)!");
-		System.out.println("*******************************************");
+		StdOut.println("");
+		StdOut.println("*******************************************");
+		StdOut.println("Welcome to Library Management System (LMS)!");
+		StdOut.println("*******************************************");
 		
 	}
 	

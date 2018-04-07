@@ -9,21 +9,21 @@ public class Library {
 	// Prints out the contents of the Library.
 	public void displayBooks() {
 		for (int i = 0; i < books.size(); i++) {
-			System.out.println(books.get(i));
+			StdOut.println(books.get(i));
 		}
 	}
 
 	// Prints out the teachers.
 	public void displayTeachers() {
 		for (int i = 0; i < teachers.size(); i++) {
-			System.out.println(teachers.get(i));
+			StdOut.println(teachers.get(i));
 		}
 	}
 
 	// Prints out the students.
 	public void displayStudents() {
 		for (int i = 0; i < students.size(); i++) {
-			System.out.println(students.get(i));
+			StdOut.println(students.get(i));
 		}
 	}
 
@@ -36,11 +36,11 @@ public class Library {
 		if (book != null && patron.allowBorrow(nbTimes, nbBooks) && patron.getHold() == null) {
 			book.makeBorrowed();
 		}
-		System.out.println("---------------------------------------------------------------------------------------------------------------");
-		System.out.println("Checking out: " +book +"\n\t  checkedout to: " +patron.toString());
-		System.out.println("---------------------------------------------------------------------------------------------------------------");
+		StdOut.println("---------------------------------------------------------------------------------------------------------------");
+		StdOut.println("Checking out: " +book +"\n\t  checkedout to: " +patron.toString());
+		StdOut.println("---------------------------------------------------------------------------------------------------------------");
 		
-		System.out.println("\n");
+		StdOut.println("\n");
 		displayBooks();
 		
 		return book;
@@ -55,11 +55,11 @@ public class Library {
 			book.makeReturned();
 		}
 		//TODO: remove Book from Patron's record.............
-		System.out.println("---------------------------------------------------------------------------------------------------------------");
-		System.out.println("Checking in: " +book +"\n\t  checkedout to: " +borrower);
-		System.out.println("---------------------------------------------------------------------------------------------------------------");
+		StdOut.println("---------------------------------------------------------------------------------------------------------------");
+		StdOut.println("Checking in: " +book +"\n\t  checkedout to: " +borrower);
+		StdOut.println("---------------------------------------------------------------------------------------------------------------");
 		
-		System.out.println("\n");
+		StdOut.println("\n");
 		displayBooks();
 		return book;
 	}
