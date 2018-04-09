@@ -3,13 +3,15 @@ public class Student extends Patron{
 
 
 	private String id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private Hold hold;
     private Fine fine;
 
-	public Student(String name, String id) {
-		super(name, id);
-		this.name = name;
+	public Student(String fName, String lName, String id) {
+		super(fName, lName, id);
+		this.firstName = fName;
+		this.lastName = lName;
 		this.id = id;
 	}
 
@@ -39,12 +41,12 @@ public class Student extends Patron{
 		this.id = id;
 	}
 
-	public String getName() {
-        return name;
+	public String getFName() {
+        return firstName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.firstName = name;
     }
 
     /**
@@ -64,9 +66,8 @@ public class Student extends Patron{
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", hold=" + hold + ", fine=" + fine + "]";
+		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hold=" + hold
+				+ ", fine=" + fine + "]";
 	}
-    
-    
 
  }
