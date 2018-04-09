@@ -58,7 +58,7 @@ public class TRLApp {
 
 		if(p == null){
 			ErrorCode error = new ErrorCode("400");			
-			throw new LibraryTextbookRentatlException("Sorry your Patron ID is not in Library database.", error);
+			throw new LibraryTextbookRentalException("Sorry your Patron ID is not in Library database.", error);
 		}
 		
 		//------ Checkout -----//
