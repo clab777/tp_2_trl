@@ -19,4 +19,14 @@ public class Fine {
         //TODO
         return fineAmount;
     }
+    
+    public double getAmount()
+    {
+    		return amount;
+    }
+    
+    public boolean getStatus()
+    {
+    		return status;
+    }
 }

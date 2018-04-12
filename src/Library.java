@@ -31,11 +31,17 @@ public class Library {
 	 * Method to mark a book as checkout if it is available. Params: Title or
 	 * isbn of a book and the name of the borrower.
 	 */
-	public Book checkoutBook(String title, Student patron, int nbTimes, int nbBooks) {
+	public Book checkoutBook(String title, Object patron, int nbTimes, int nbBooks) {
 		Book book = findBook(title);
-		if (book != null && patron.allowBorrow(nbTimes, nbBooks) && patron.getHold() == null) {
+		if(patron instanceof Student){
+			Student s = (Student)patron;
+			if (book != null && s.allowBorrow(nbTimes, nbBooks) && s.getHold() == null) {
+				book.makeBorrowed();
+			}			
+		}else{
 			book.makeBorrowed();
 		}
+		
 		StdOut.println("---------------------------------------------------------------------------------------------------------------");
 		StdOut.println("Checking out: " +book +"\n\t  checkedout to: " +patron.toString());
 		StdOut.println("---------------------------------------------------------------------------------------------------------------");
@@ -78,6 +84,50 @@ public class Library {
 		return null;
 	}
 
+	/*
+	 * Finds a Student for a given name. 
+	 */
+	private Student findStudent(String name){
+		for(Student s : students){
+			if(name.equalsIgnoreCase(s.getFName())){
+				return s;
+			}
+		}		
+		return null;
+	}
+	
+	/*
+	 * Finds a Teacher for a given name. 
+	 */
+	private Teacher findTeacher(String name){
+		for(Teacher t : teachers){
+			if(name.equalsIgnoreCase(t.getFName())){
+				return t;
+			}
+		}		
+		return null;
+	}
+	
+	/**
+	 * <code>findBorrower</code>. Lookup borrower (Patron) from the Library database.
+	 * @param name
+	 * @return borrower. Patron (Student or Teacher)
+	 */
+	public Patron findBorrower(String name){
+		Object b1 = findStudent(name);
+		Object b2 = findTeacher(name);
+		
+		if(b1 != null){
+			return (Student)b1;
+		}else if(b2 != null){
+			return (Teacher)b2;
+		}else{
+			return null;
+		}
+	}
+	
+		
+	
 	public List<Book> getBooks() {
 		return books;
 	}

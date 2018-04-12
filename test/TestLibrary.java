@@ -1,4 +1,5 @@
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +67,7 @@ public class TestLibrary {
 	@Test
 	public void testCheckin() {
 
-		Book b = library.checkinBook(TITLE, library.getStudents().get(0).getName()); // Return book.
+		Book b = library.checkinBook(TITLE, library.getStudents().get(0).getFName()); // Return book.
 		assertTrue(b != null && b.getIsbn() != null);
 	}
 	
@@ -89,16 +90,16 @@ public class TestLibrary {
 
 	private static List<Student> loadStudents() {
 		List<Student> students = new ArrayList<Student>();
-		Student student = new Student("Christophe Labarere", "123");
+		Student student = new Student("Christophe", "Labarere", "123");
 		students.add(student);
 
-		student = new Student("Sinith Leng", "345");
+		student = new Student("Sinith", "Leng", "345");
 		students.add(student);
 
-		student = new Student("Robert, M Roy", "678");
+		student = new Student("Robert", "Roy", "678");
 		students.add(student);
 
-		student = new Student("Surjan Kshetri", "901");
+		student = new Student("Surjan", "Kshetri", "901");
 		students.add(student);
 
 		return students;
@@ -106,13 +107,13 @@ public class TestLibrary {
 
 	private static List<Teacher> loadTeachers() {
 		List<Teacher> teachers = new ArrayList<Teacher>();
-		Teacher teacher = new Teacher("Eric Level", "SEIS-635");
+		Teacher teacher = new Teacher("Eric", "Level", "SEIS-635");
 		teachers.add(teacher);
 
-		teacher = new Teacher("Ali Naqvi", "SEIS-625");
+		teacher = new Teacher("Ali", "Naqvi", "SEIS-625");
 		teachers.add(teacher);
 
-		teacher = new Teacher("Ted Wallerstedt", "SEIS-663");
+		teacher = new Teacher("Ted", "Wallerstedt", "SEIS-663");
 		teachers.add(teacher);
 
 		return teachers;
