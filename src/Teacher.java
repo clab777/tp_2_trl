@@ -33,4 +33,8 @@ public class Teacher extends Patron {
 	public String getFName() {
 		return firstName;
 	}
+	
+	public String getLName() {
+		return lastName;
+	}
 }
